@@ -77,8 +77,9 @@ resource "aws_security_group_rule" "db_bastion" {
 
 
 
+
 #Backend
-# Backend is accepting connections from frontend
+# Backend is accepting connections from backend
 resource "aws_security_group_rule" "backend_frontend" {
   type              = "ingress"
   from_port         = 8080

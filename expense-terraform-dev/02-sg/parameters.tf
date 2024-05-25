@@ -1,3 +1,11 @@
+# resource "aws_ssm_parameter" "vpc_id" {
+#   name  = "/${var.project_name}/${var.environment}/vpc_id"
+#   type  = "String"
+#   value = module.db.sg_id #This is coming from vpc module . Capturing through SSM parameter store.
+# #   output "vpc_id"{  This is exposed from output.tf from VPC module.
+# #   value=aws_vpc.main.id }
+# }
+
 resource "aws_ssm_parameter" "db_sg_id" {
   name  = "/${var.project_name}/${var.environment}/db_sg_id"
   type  = "String"
